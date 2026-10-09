@@ -1,0 +1,33 @@
+[importlinter]
+root_packages =
+    talent_pool
+    config
+include_external_packages = True
+
+[importlinter:contract:1]
+name = gRPC handlers must not import db_models directly
+type = forbidden
+source_modules =
+    talent_pool.grpc_handlers
+forbidden_modules =
+    talent_pool.db_models
+    django
+allow_indirect_imports = True
+include_external_packages = True
+
+[importlinter:contract:2]
+name = managers must not import grpc_handlers
+type = forbidden
+source_modules =
+    talent_pool.managers
+forbidden_modules =
+    talent_pool.grpc_handlers
+
+[importlinter:contract:3]
+name = db_models must not import managers or grpc_handlers
+type = forbidden
+source_modules =
+    talent_pool.db_models
+forbidden_modules =
+    talent_pool.managers
+    talent_pool.grpc_handlers

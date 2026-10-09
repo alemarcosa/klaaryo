@@ -1,0 +1,158 @@
+[
+  {
+    "candidate_uuid": "beta-xxxx-xxxx-0001",
+    "full_name": "Alessandro Neri",
+    "contact": {
+      "email_address": "alessandro.neri@example.com",
+      "mobile": "+39 340 1111111"
+    },
+    "age": 29,
+    "stage": "new_application",
+    "job_reference": "JOB-B-001",
+    "submitted_timestamp": 1728388800
+  },
+  {
+    "candidate_uuid": "beta-xxxx-xxxx-0002",
+    "full_name": "Maria Grazia Rossi",
+    "contact": {
+      "email_address": "mariagrazia.rossi@example.com",
+      "mobile": "+39 340 2222222"
+    },
+    "age": 35,
+    "stage": "new_application",
+    "job_reference": "JOB-B-001",
+    "submitted_timestamp": 1728385200
+  },
+  {
+    "candidate_uuid": "beta-xxxx-xxxx-0003",
+    "full_name": "Giulia De Luca",
+    "contact": {
+      "email_address": "giulia.deluca@example.com",
+      "mobile": "+39 340 3333333"
+    },
+    "age": 27,
+    "stage": "new_application",
+    "job_reference": "JOB-B-002",
+    "submitted_timestamp": 1728381600
+  },
+  {
+    "candidate_uuid": "beta-xxxx-xxxx-0004",
+    "full_name": "Federico Rossi",
+    "contact": {
+      "email_address": "federico.rossi@example.com",
+      "mobile": "+39 340 4444444"
+    },
+    "age": 31,
+    "stage": "screening",
+    "job_reference": "JOB-B-002",
+    "submitted_timestamp": 1728378000
+  },
+  {
+    "candidate_uuid": "beta-xxxx-xxxx-0005",
+    "full_name": "Laura Bianchi",
+    "contact": {
+      "email_address": "laura.bianchi@example.com",
+      "mobile": "+39 340 5555555"
+    },
+    "age": 24,
+    "stage": "screening",
+    "job_reference": "JOB-B-003",
+    "submitted_timestamp": 1728374400
+  },
+  {
+    "candidate_uuid": "beta-xxxx-xxxx-0006",
+    "full_name": "Andrea Moretti",
+    "contact": {
+      "email_address": "andrea.moretti@example.com",
+      "mobile": "+39 340 6666666"
+    },
+    "age": 40,
+    "stage": "not_a_fit",
+    "job_reference": "JOB-B-001",
+    "submitted_timestamp": 1728370800
+  },
+  {
+    "candidate_uuid": "beta-xxxx-xxxx-0007",
+    "full_name": "Silvia Conti",
+    "contact": {
+      "email_address": "silvia.conti@example.com",
+      "mobile": "+39 340 7777777"
+    },
+    "age": 33,
+    "stage": "offer_accepted",
+    "job_reference": "JOB-B-003",
+    "submitted_timestamp": 1728367200
+  },
+  {
+    "candidate_uuid": "beta-xxxx-xxxx-0008",
+    "full_name": "Tommaso Galli",
+    "contact": {
+      "email_address": "tommaso.galli@example.com",
+      "mobile": "+39 340 8888888"
+    },
+    "age": 16,
+    "stage": "new_application",
+    "job_reference": "JOB-B-001",
+    "submitted_timestamp": 1728363600
+  },
+  {
+    "candidate_uuid": "beta-xxxx-xxxx-0009",
+    "full_name": "Martina Ferrari",
+    "contact": {
+      "email_address": "",
+      "mobile": "+39 340 9999999"
+    },
+    "age": 26,
+    "stage": "screening",
+    "job_reference": "JOB-B-002",
+    "submitted_timestamp": 1728360000
+  },
+  {
+    "candidate_uuid": "beta-xxxx-xxxx-0010",
+    "full_name": "Riccardo Colombo",
+    "contact": {
+      "email_address": "riccardo.colombo@example.com",
+      "mobile": null
+    },
+    "age": 28,
+    "stage": "new_application",
+    "job_reference": "JOB-B-003",
+    "submitted_timestamp": 1728356400
+  },
+  {
+    "candidate_uuid": "beta-xxxx-xxxx-0011",
+    "full_name": "Elisa Romano",
+    "contact": {
+      "email_address": "elisa.romano@example.com",
+      "mobile": "+39 340 1010101"
+    },
+    "age": null,
+    "stage": "screening",
+    "job_reference": "JOB-B-001",
+    "submitted_timestamp": 1728352800
+  },
+  {
+    "candidate_uuid": "beta-xxxx-xxxx-0012",
+    "full_name": "Nicola Mazza",
+    "contact": {
+      "email_address": "nicola.mazza@example.com",
+      "mobile": "+39 340 1212121"
+    },
+    "age": "ventotto",
+    "stage": "new_application",
+    "job_reference": "JOB-B-002",
+    "submitted_timestamp": 1728349200
+  },
+  {
+    "candidate_uuid": "beta-xxxx-xxxx-0013",
+    "full_name": "Claudia Fabbri",
+    "contact": {
+      "email_address": "claudia.fabbri@example.com",
+      "mobile": "+39 340 1313131"
+    },
+    "age": 30,
+    "stage": "interview_scheduled",
+    "job_reference": "JOB-B-003",
+    "submitted_timestamp": 1728345600
+  }
+]

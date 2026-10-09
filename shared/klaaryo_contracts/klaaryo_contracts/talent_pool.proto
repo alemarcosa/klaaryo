@@ -1,0 +1,57 @@
+syntax = "proto3";
+package klaaryo.talent_pool.v1;
+import "google/protobuf/timestamp.proto";
+
+enum InternalStatus {
+  INTERNAL_STATUS_UNSPECIFIED = 0;
+  INTERNAL_STATUS_NEW = 1;
+  INTERNAL_STATUS_IN_REVIEW = 2;
+  INTERNAL_STATUS_REJECTED = 3;
+  INTERNAL_STATUS_HIRED = 4;
+}
+
+message NormalizedCandidate {
+  string external_id = 1;
+  string ats_source = 2;
+  string first_name = 3;
+  string last_name = 4;
+  string email = 5;
+  string phone = 6;
+  int32 age = 7;
+  string job_external_id = 8;
+  InternalStatus internal_status = 9;
+  google.protobuf.Timestamp applied_at = 10;
+}
+
+message UpsertResult {
+  int64 candidate_pk = 1;
+  bool created = 2;
+  repeated string changed_fields = 3;
+}
+
+message GetCandidateRequest {
+  int64 candidate_pk = 1;
+}
+
+message Candidate {
+  int64 candidate_pk = 1;
+  NormalizedCandidate data = 2;
+  google.protobuf.Timestamp created_at = 3;
+  google.protobuf.Timestamp updated_at = 4;
+}
+
+message ListCandidatesRequest {
+  string ats_source = 1;
+  InternalStatus internal_status = 2;
+  int32 limit = 3;
+}
+
+message ListCandidatesResponse {
+  repeated Candidate candidates = 1;
+}
+
+service TalentPool {
+  rpc UpsertCandidate(NormalizedCandidate) returns (UpsertResult);
+  rpc GetCandidate(GetCandidateRequest) returns (Candidate);
+  rpc ListCandidates(ListCandidatesRequest) returns (ListCandidatesResponse);
+}

@@ -1,0 +1,111 @@
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  fake_ats_alpha:
+    build:
+      context: .
+      dockerfile: services/fake_ats_alpha/Dockerfile
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./var/ats_alpha:/data
+
+  fake_ats_beta:
+    build:
+      context: .
+      dockerfile: services/fake_ats_beta/Dockerfile
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./var/ats_beta:/data
+
+  talent_pool:
+    build:
+      context: .
+      dockerfile: services/talent_pool/Dockerfile
+    ports:
+      - "50051:50051"
+    depends_on:
+      redis:
+        condition: service_healthy
+    volumes:
+      - talent_pool_data:/data
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - EVENT_BUS_BACKEND=redis
+      - DATABASE_PATH=/data/db.sqlite3
+
+  event_logger:
+    build:
+      context: .
+      dockerfile: services/event_logger/Dockerfile
+    depends_on:
+      redis:
+        condition: service_healthy
+    volumes:
+      - event_logger_data:/data
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - EVENT_BUS_BACKEND=redis
+      - DATABASE_PATH=/data/db.sqlite3
+      - PYTHONUNBUFFERED=1
+
+  push_data_manager:
+    build:
+      context: .
+      dockerfile: services/push_data_manager/Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - fake_ats_alpha
+      - fake_ats_beta
+      - talent_pool
+    volumes:
+      - push_data_manager_data:/data
+    environment:
+      - ALPHA_BASE_URL=http://fake_ats_alpha:8001
+      - BETA_BASE_URL=http://fake_ats_beta:8002
+      - TALENT_POOL_GRPC_TARGET=talent_pool:50051
+      - DATABASE_PATH=/data/db.sqlite3
+      - SYNC_INITIAL_LOOKBACK_DAYS=7
+      - SYNC_CURSOR_OVERLAP_SECONDS=300
+      - ATS_HTTP_TIMEOUT_SECONDS=10
+
+  grpcurl:
+    image: fullstorydev/grpcurl:latest
+    profiles:
+      - tools
+    depends_on:
+      - talent_pool
+
+  e2e:
+    build:
+      context: .
+      dockerfile: tests/e2e/Dockerfile
+    profiles:
+      - test
+    depends_on:
+      - push_data_manager
+      - event_logger
+    volumes:
+      - ./var/ats_alpha:/data/ats_alpha
+      - event_logger_data:/data/event_logger:ro
+    environment:
+      - PUSH_DATA_MANAGER_URL=http://push_data_manager:8000
+      - TALENT_POOL_GRPC_TARGET=talent_pool:50051
+      - REDIS_URL=redis://redis:6379/0
+      - EVENT_LOGGER_DB_PATH=/data/event_logger/db.sqlite3
+      - ATS_ALPHA_DATA_DIR=/data/ats_alpha
+
+volumes:
+  talent_pool_data:
+  event_logger_data:
+  push_data_manager_data:

@@ -1,0 +1,34 @@
+[importlinter]
+root_packages =
+    push_data_manager
+    config
+
+[importlinter:contract:1]
+name = REST views must not import db_models, adapters or utils
+type = forbidden
+source_modules =
+    push_data_manager.rest_views
+forbidden_modules =
+    push_data_manager.db_models
+    push_data_manager.adapters
+    push_data_manager.utils
+allow_indirect_imports = True
+
+[importlinter:contract:2]
+name = managers must not import rest_views
+type = forbidden
+source_modules =
+    push_data_manager.managers
+forbidden_modules =
+    push_data_manager.rest_views
+
+[importlinter:contract:3]
+name = adapters and utils must not import managers, db_models or rest_views
+type = forbidden
+source_modules =
+    push_data_manager.adapters
+    push_data_manager.utils
+forbidden_modules =
+    push_data_manager.managers
+    push_data_manager.db_models
+    push_data_manager.rest_views

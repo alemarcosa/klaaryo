@@ -1,0 +1,33 @@
+[importlinter]
+root_packages =
+    event_logger
+    config
+include_external_packages = True
+
+[importlinter:contract:1]
+name = event_consumers must not import db_models directly
+type = forbidden
+source_modules =
+    event_logger.event_consumers
+forbidden_modules =
+    event_logger.db_models
+    django
+allow_indirect_imports = True
+include_external_packages = True
+
+[importlinter:contract:2]
+name = managers must not import event_consumers
+type = forbidden
+source_modules =
+    event_logger.managers
+forbidden_modules =
+    event_logger.event_consumers
+
+[importlinter:contract:3]
+name = db_models must not import managers or event_consumers
+type = forbidden
+source_modules =
+    event_logger.db_models
+forbidden_modules =
+    event_logger.managers
+    event_logger.event_consumers

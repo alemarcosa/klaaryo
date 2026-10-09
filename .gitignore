@@ -1,0 +1,12 @@
+var/
+*.sqlite3
+*_pb2*.py
+*_pb2*.pyi
+NOTES_FOR_AUTHOR.md
+__pycache__/
+*.pyc
+.env
+*.egg-info/
+dist/
+build/
+.pytest_cache/

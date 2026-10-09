@@ -1,0 +1,156 @@
+[
+  {
+    "id": "alpha-1001",
+    "first_name": "Marco",
+    "last_name": "Bianchi",
+    "email": "marco.bianchi@example.com",
+    "phone_number": "+39 333 1234567",
+    "birth_date": "1995-06-15",
+    "application_status": "NEW",
+    "job_id": "JOB-A-001",
+    "applied_at": "2026-10-08T14:00:00Z"
+  },
+  {
+    "id": "alpha-1002",
+    "first_name": "Luca",
+    "last_name": "Verdi",
+    "email": "luca.verdi@example.com",
+    "phone_number": "+39 333 2345678",
+    "birth_date": "1990-03-22",
+    "application_status": "NEW",
+    "job_id": "JOB-A-001",
+    "applied_at": "2026-10-08T13:30:00Z"
+  },
+  {
+    "id": "alpha-1003",
+    "first_name": "Anna",
+    "last_name": "Russo",
+    "email": "anna.russo@example.com",
+    "phone_number": "+39 333 3456789",
+    "birth_date": "1988-11-10",
+    "application_status": "NEW",
+    "job_id": "JOB-A-002",
+    "applied_at": "2026-10-08T13:00:00Z"
+  },
+  {
+    "id": "alpha-1004",
+    "first_name": "Giuseppe",
+    "last_name": "Ferrari",
+    "email": "giuseppe.ferrari@example.com",
+    "phone_number": "+39 333 4567890",
+    "birth_date": "1992-07-04",
+    "application_status": "IN_REVIEW",
+    "job_id": "JOB-A-002",
+    "applied_at": "2026-10-08T12:30:00Z"
+  },
+  {
+    "id": "alpha-1005",
+    "first_name": "Sara",
+    "last_name": "Colombo",
+    "email": "sara.colombo@example.com",
+    "phone_number": "+39 333 5678901",
+    "birth_date": "1997-01-30",
+    "application_status": "IN_REVIEW",
+    "job_id": "JOB-A-003",
+    "applied_at": "2026-10-08T12:00:00Z"
+  },
+  {
+    "id": "alpha-1006",
+    "first_name": "Paolo",
+    "last_name": "Ricci",
+    "email": "paolo.ricci@example.com",
+    "phone_number": "+39 333 6789012",
+    "birth_date": "1985-09-18",
+    "application_status": "REJECTED",
+    "job_id": "JOB-A-001",
+    "applied_at": "2026-10-08T11:30:00Z"
+  },
+  {
+    "id": "alpha-1007",
+    "first_name": "Elena",
+    "last_name": "Moretti",
+    "email": "elena.moretti@example.com",
+    "phone_number": "+39 333 7890123",
+    "birth_date": "1993-12-25",
+    "application_status": "HIRED",
+    "job_id": "JOB-A-003",
+    "applied_at": "2026-10-08T11:00:00Z"
+  },
+  {
+    "id": "alpha-1008",
+    "first_name": "Matteo",
+    "last_name": "Gialli",
+    "email": "matteo.gialli@example.com",
+    "phone_number": "+39 333 8901234",
+    "birth_date": "2011-04-20",
+    "application_status": "NEW",
+    "job_id": "JOB-A-001",
+    "applied_at": "2026-10-08T10:30:00Z"
+  },
+  {
+    "id": "alpha-1009",
+    "first_name": "Chiara",
+    "last_name": "Fontana",
+    "email": "",
+    "phone_number": "+39 333 9012345",
+    "birth_date": "1991-08-14",
+    "application_status": "NEW",
+    "job_id": "JOB-A-002",
+    "applied_at": "2026-10-08T10:00:00Z"
+  },
+  {
+    "id": "alpha-1010",
+    "first_name": "Davide",
+    "last_name": "Martini",
+    "email": "davide.martini@example.com",
+    "phone_number": null,
+    "birth_date": "1994-02-28",
+    "application_status": "IN_REVIEW",
+    "job_id": "JOB-A-003",
+    "applied_at": "2026-10-08T09:30:00Z"
+  },
+  {
+    "id": "alpha-1011",
+    "first_name": "Francesca",
+    "last_name": "Lombardi",
+    "email": "francesca.lombardi@example.com",
+    "phone_number": "+39 333 1112233",
+    "birth_date": "1995-13-45",
+    "application_status": "NEW",
+    "job_id": "JOB-A-001",
+    "applied_at": "2026-10-08T09:00:00Z"
+  },
+  {
+    "id": "alpha-1012",
+    "first_name": "Roberto",
+    "last_name": "Conti",
+    "email": "roberto.conti@example.com",
+    "phone_number": "+39 333 4445566",
+    "birth_date": "1989-05-12",
+    "application_status": "ON_HOLD",
+    "job_id": "JOB-A-002",
+    "applied_at": "2026-10-08T08:30:00Z"
+  },
+  {
+    "id": "alpha-1013",
+    "first_name": "Valentina",
+    "last_name": "Gatti",
+    "email": "mario.at.example.com",
+    "phone_number": "+39 333 7778899",
+    "birth_date": "1996-10-03",
+    "application_status": "NEW",
+    "job_id": "JOB-A-003",
+    "applied_at": "2026-10-08T08:00:00Z"
+  },
+  {
+    "id": "alpha-1014",
+    "first_name": "Simone",
+    "last_name": "Villa",
+    "email": "simone.villa@example.com",
+    "phone_number": "+39 333 0001122",
+    "birth_date": "1998-07-19",
+    "application_status": "NEW",
+    "job_id": "JOB-A-001",
+    "applied_at": "2026-09-28T14:00:00Z"
+  }
+]
